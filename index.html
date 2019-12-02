@@ -3,9 +3,10 @@
 <title>What a Load of B***S!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Raleway:900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <style>
@@ -13,53 +14,192 @@ body{
   font-family: 'Raleway', sans-serif;
   color:#666666;
 }
-header{
+.container,
+.row{
   min-height: 100vh;
-  background: #035EE4;
+}
+header{
+  background: #353177;
   color:#FFFFFF;
   }
 header h1{
-  
-  font-size:3em;
+  text-transform:uppercase;
     }
+header h1 .line1{
+  display:block;
+  line-height:1em;
+  font-size:9vw;
+}
+header h1 .line2{
+  display:block;
+  line-height:1em;
+  font-size:22vw;
+}
+header #sub-heading .line3{
+  display:block;
+  line-height:1em;
+  font-size:1.6em;
+  font-size:4.6vw;
+}
+header #sub-heading .line4{
+  display:block;
+  line-height:1.5em;
+  font-size:5.74vw;
+}
+@media screen  and (min-width: 992px){
+  header h1 .line1{
+  display:block;
+  line-height:1em;
+  font-size:4.5vw;
+}
+header h1 .line2{
+  display:block;
+  line-height:1em;
+  font-size:11vw;
+}
+header #sub-heading .line3{
+  display:block;
+  line-height:1em;
+  font-size:1.6em;
+  font-size:2.3vw;
+}
+header #sub-heading .line4{
+  display:block;
+  line-height:1.5em;
+  font-size:2.87vw;
+}
+}
+.button{
+  background:#F1171B;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-transform:uppercase;
+  font-size:1.5em;
+  padding:0.2em 0.5em;
+  display:block;
+  width:fit-content;
+}
+.button:hover{
+  color:#FFFFFF;
+}
+section:nth-of-type(odd) .button{
+  background:#FFFFFF;
+  color:#00AEEF;
+  }
+
+section:nth-of-type(odd) .button:hover{
+background:#FFFFFF;
+color:#00AEEF;
+}
+
+header .button{
+  background:#FFFFFF;
+  color:#353177;
+  margin: 1em 0;
+}
+header .button:hover{
+  color:#353177;
+}
 section{
     min-height:100vh;
+    position:relative;
   }
     
 section:nth-of-type(odd){
-  background:#DFDFDF;
+  background:#00AEEF;
+  color:#FFFFFF;
+  }
+
+section .button{
+  position:absolute;
+  width:6em;
+  bottom:1em;
+  left:50%;
+  margin-left:-3em;
+  text-align:center;
+}
+  footer{
+    background:#093B7C;
+    color:#FFFFFF;
+    padding:1em;
+
   }
 </style>
+<script>
+$(document).ready(function() {
+  // Check if element is scrolled into view
+  function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
+  // If element is scrolled into view, slide it in
+  $(window).scroll(function() {
+    $('.scroll-animations .animated').each(function() {
+      if (isScrolledIntoView(this) === true) {
+        $(this).addClass('slideInLeft');
+      }
+    });
+  });
+
+  $("a[href^='#']").click(function(e) {
+    e.preventDefault();
+    
+    var position = $($(this).attr("href")).offset().top;
+
+    $("body, html").animate({
+      scrollTop: position
+    } /* speed */ );
+  });
+});
+</script>
 </head>
 <body>
 <div id="wrapper">
   <header>
     <div class="container">
-      <div class="content col-lg-8 step processes">
-        <h1 class="slideInLeft animated">What a load of Boris!</h1>
-        <div id="sub-heading" class="slideInLeft animated">Fact Checking the Prime Minister for the people of Uxbridge</div>
-        <a href="#runway" class="slideInLeft animated page-scroll">Get Started &gt;</a>
+      <div class="row align-items-center">
+        <div class="content col-lg-6 step processes">
+          <h1 class="slideInLeft animated"><span class="line1">What a load of</span><span class="line2">Boris!</span></h1>
+          <div id="sub-heading" class="slideInLeft animated"><span class="line3">Fact Checking the Prime Minister</span><span class="line4">for the people of Uxbridge</span></div>
+          <a href="#runway" class="button page-scroll">Get Started &gt;&gt;</a>
+        </div>
       </div>
-    </div>
+  </div>
   </header>
-  <section id="runway" class="container-fluid">
-    <div class="container">
-      <h2>Stuff about runway</h2>
+  <section id="runway" class="container-fluid scroll-animations">
+      <div class="container">
+        <div class="row align-items-center">
+          <h2 class="col animated">Stuff about runway</h2>
+          <a href="#nhs" class="button page-scroll">There's more...</a>
+        </div>
     </div>
   </section>
-  <section id="nhs" class="container-fluid">
-    <div class="container">
-      <h2>Stuff about nhs</h2>
+  <section id="nhs" class="container-fluid scroll-animations">
+      <div class="container">
+        <div class="row align-items-center">
+          <h2 class="col animated">Stuff about nhs</h2>
+          <a href="#funding" class="button page-scroll">...and more...</a>
+        </div>
     </div>
   </section>
-  <section id="funding" class="container-fluid">
-    <div class="container">
-      <h2>Stuff about funding</h2>
+  <section id="funding" class="container-fluid scroll-animations">
+      <div class="container">
+        <div class="row align-items-center">
+          <h2 class="col animated">Stuff about funding</h2>
+          <a href="#support" class="button page-scroll">...and more...</a>
+        </div>
     </div>
   </section>
-  <section id="support" class="container-fluid">
-    <div class="container">
-      <h2>Stuff about lies</h2>
+  <section id="support" class="container-fluid scroll-animations">
+      <div class="container">
+        <div class="row align-items-center">
+          <h2 class="col animated">Stuff about lies</h2>
+        </div>
     </div>
   </section>
   <footer class="container-fluid">
