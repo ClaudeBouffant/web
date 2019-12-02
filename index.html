@@ -18,33 +18,39 @@ body{
   background: #035EE4;
   color:#FFFFFF;
   }
-.article{
+article{
     min-height:100vh;
+  }
+    
+article:nth-child(odd){
+  background:#DFDFDF
   }
 </style>
 </head>
 <body>
 <div id="wrapper" class="container">
-  <div id="banner">
-  <h1 class="slideInLeft animated">What a load of Boris!</h1>
-  <div id="sub-heading">Fact Checking the Prime Minister for the people of Uxbridge</div>
-    <a href="#runway">Get Started &gt;</a>
-  </div>
-  <article id="runway">
-    <div>Stuff about runway</div>
+  <header class="container-fluid">
+  <div class="content col-lg-8 step process">
+    <h1 class="slideInLeft animated">What a load of Boris!</h1>
+  <div id="sub-heading" class="slideInLeft animated">Fact Checking the Prime Minister for the people of Uxbridge</div>
+    <a href="#runway" class="slideInLeft animated">Get Started &gt;</a>
+    </div>
+  </header>
+  <article id="runway" class="container-fluid">
+    <div class="col-lg-12">Stuff about runway</div>
   <article>
-  <article id="nhs">
+  <article id="nhs" class="container-fluid">
     <div>Stuff about nhs</div>
   <article>
-  <article id="funding">
+  <article id="funding" class="container-fluid">
     <div>Stuff about funding</div>
   <article>
-  <article id="support">
+  <article id="support" class="container-fluid">
     <div>Stuff about lies</div>
   <article>
-    <div id="footer">
+    <footer class="container-fluid">
       Call to action...
-    </div>
+    <footer>
 </div>
 </body>
 </html>
