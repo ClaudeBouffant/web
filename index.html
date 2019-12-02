@@ -10,25 +10,28 @@
   <style>
 body{
   font-family: 'Raleway', sans-serif;
-  font-size:3em;
   color:#666666;
 }
-#banner{
+header{
   min-height: 100vh;
   background: #035EE4;
   color:#FFFFFF;
   }
+header h1{
+  
+  font-size:3em;
+    }
 article{
     min-height:100vh;
   }
     
-article:nth-child(odd){
-  background:#DFDFDF
+article:nth-of-type(odd){
+  background:#DFDFDF;
   }
 </style>
 </head>
 <body>
-<div id="wrapper" class="container">
+<div id="wrapper" class="container-fluid">
   <header class="container-fluid">
   <div class="content col-lg-8 step process">
     <h1 class="slideInLeft animated">What a load of Boris!</h1>
@@ -48,9 +51,9 @@ article:nth-child(odd){
   <article id="support" class="container-fluid">
     <div>Stuff about lies</div>
   <article>
-    <footer class="container-fluid">
-      Call to action...
-    <footer>
+  <footer class="container-fluid">
+    Call to action...
+  <footer>
 </div>
 </body>
 </html>
