@@ -137,7 +137,7 @@ $(document).ready(function() {
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
   }
-  // If element is scrolled into view, slide it in
+  // If element is scrolled into view, fade it in
   $(window).scroll(function() {
     $('.scroll-animations .animated').each(function() {
       if (isScrolledIntoView(this) === true) {
@@ -173,7 +173,7 @@ $(document).ready(function() {
   </header>
   <section id="runway" class="scroll-animations">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center scroll-animations">
           <h2 class="col animated">Stuff about runway</h2>
           <a href="#nhs" class="button page-scroll">There's more...</a>
         </div>
@@ -181,23 +181,23 @@ $(document).ready(function() {
   </section>
   <section id="nhs" class="scroll-animations">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center scroll-animations">
           <h2 class="col animated">Stuff about nhs</h2>
           <a href="#funding" class="button page-scroll">...and more...</a>
         </div>
     </div>
   </section>
-  <section id="funding" class="scroll-animations">
+  <section id="funding" class="">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center scroll-animations">
           <h2 class="col animated">Stuff about funding</h2>
           <a href="#support" class="button page-scroll">...and more...</a>
         </div>
     </div>
   </section>
-  <section id="support" class="scroll-animations">
+  <section id="support" class="">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center scroll-animations">
           <h2 class="col animated">Stuff about lies</h2>
         </div>
     </div>
