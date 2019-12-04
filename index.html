@@ -14,61 +14,29 @@
 body{
   font-family: 'Raleway', sans-serif;
   color:#666666;
+  background: #353177;
 }
 .container,
 .row{
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 header{
   background: #353177;
+  background-image:url(wall.jpg);
+  background-size: cover;
   color:#FFFFFF;
-  }
+  padding-top:1.5em;
+}
 header h1{
   text-transform:uppercase;
-    }
-header h1 .line1{
-  display:block;
-  line-height:1em;
-  font-size:9vw;
 }
-header h1 .line2{
-  display:block;
-  line-height:1em;
-  font-size:22vw;
+header .button{
+  background:#FFFFFF;
+  color:#353177;
+  margin: 1em 0;
 }
-header #sub-heading .line3{
-  display:block;
-  line-height:1em;
-  font-size:1.6em;
-  font-size:4.6vw;
-}
-header #sub-heading .line4{
-  display:block;
-  line-height:1.5em;
-  font-size:5.74vw;
-}
-@media screen  and (min-width: 992px){
-  header h1 .line1{
-  display:block;
-  line-height:1em;
-  font-size:4.5vw;
-}
-header h1 .line2{
-  display:block;
-  line-height:1em;
-  font-size:11vw;
-}
-header #sub-heading .line3{
-  display:block;
-  line-height:1em;
-  font-size:1.6em;
-  font-size:2.3vw;
-}
-header #sub-heading .line4{
-  display:block;
-  line-height:1.5em;
-  font-size:2.87vw;
-}
+header .button:hover{
+  color:#353177;
 }
 .button{
   background:#F1171B;
@@ -83,42 +51,16 @@ header #sub-heading .line4{
 .button:hover{
   color:#FFFFFF;
 }
-section:nth-of-type(odd) .button{
-  background:#FFFFFF;
-  color:#00AEEF;
-  }
-
-section:nth-of-type(odd) .button:hover{
-background:#FFFFFF;
-color:#00AEEF;
-}
-
-header .button{
-  background:#FFFFFF;
-  color:#353177;
-  margin: 1em 0;
-}
-header .button:hover{
-  color:#353177;
-}
-section
-{
-    min-height:100vh;
-    position:relative;
-  }
-    
-section:nth-of-type(odd){
-  background:#00AEEF;
+section{
   color:#FFFFFF;
-  }
-
+  padding:3em 0 2em 0;
+  position:relative;
+}
 section .button{
-  position:absolute;
+  text-decoration:none;
   width:6em;
-  bottom:1em;
-  left:50%;
-  margin-left:-3em;
   text-align:center;
+  margin: 1em auto;
 }
 
 section blockquote,
@@ -130,24 +72,108 @@ section h3{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   text-transform:uppercase;
 }
-section .left{
-  animation-delay: 0.5s;
+section .right{
+  animation-delay: 0.3s;
 }
-  footer{
-    text-align:center;
-    font-size:2em;
-    background:#093B7C;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    text-transform:uppercase;
-    color:#FFFFFF;
-    padding:1em;
 
-  }
+section#intro{
+  text-transform:none;
+  padding: 2em 0;
+  background:#000000;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:1.5em;
+}
+section#runway{
+  background:#00AEEF;
+}
+section#runway .button{
+  background:#FFFFFF;
+  color:#00AEEF;
+}
+section#runway .button:hover{
+  color:#00AEEF;
+}
+section#nhs{
+  background:#FFFFFF;
+  color:#333333;
+}
+section#nhs .button{
+  background:#333333;
+  color:#FFFFFF;
+}
+section#nhs .button:hover{
+  color:#FFFFFF;
+}
+section#brexitdeal{
+  background:#353177;
+  color:#FFFFFF;
+}
+section#brexitdeal .button{
+  background:#FFFFFF;
+  color:#353177;
+}
+section#brexitdeal .button:hover{
+  color:#353177;
+}
+section#delay{
+  background:#00AEEF;
+}
+section#delay .button{
+  background:#FFFFFF;
+  color:#00AEEF;
+}
+section#delay .button:hover{
+  color:#00AEEF;
+}
+section#tax{
+  background:#F1171B;
+}
+section#tax .button{
+  background:#FFFFFF;
+  color:#F1171B;
+}
+section#tax .button:hover{
+  color:#F1171B;
+}
+footer{
+  text-align:center;
+  font-size:2em;
+  background:#093B7C;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-transform:uppercase;
+  color:#FFFFFF;
+  padding:1em;
 
-  a.fa{
-    color:#FFFFFF;
-    text-decoration:none;
-  }
+}
+#share{
+  font-family: 'Raleway', sans-serif;
+  text-transform:none;
+  padding: 1em;
+  height:inherit;
+  font-size:2em;
+  color:#000000;
+  background:#FEC12B;
+  text-align:center;
+}
+#share span{
+  color:#FEC12B;
+  background:#000000;
+}
+
+a.fa{
+  color:#FFFFFF;
+  text-decoration:none;
+}
+.scroll-animations .animated{
+  visibility:hidden;
+}
+.scroll-animations .animated.fadeInLeft,
+.scroll-animations .animated.fadeInRight{
+  visibility:visible;
+}
+@media screen  and (min-width: 992px){
+
+}
 </style>
 <script>
 $(document).ready(function() {
@@ -167,8 +193,10 @@ $(document).ready(function() {
       if (isScrolledIntoView(this) === true) {
         if($(this).hasClass('left')){
           $(this).addClass('fadeInLeft');
+          $(this).show();
         }else{
           $(this).addClass('fadeInRight');
+          $(this).show();
         }
       }
     });
@@ -195,58 +223,112 @@ $(document).ready(function() {
             <h1 class="fadeInLeft animated"><img src="WhatALoadOfBoris-01.svg" alt="What a Load of Boris! Fact checking the Prime Minister for the people of Uxbridge"width="100%"/></h1>
           <a href="#runway" class="button page-scroll">Get Started &gt;&gt;</a>
         </div>
+        <div class="content col-lg-6 step processes">
+          <img src="Boris.png" alt="" width="100%" class="fadeInUp animated"/>
+        </div>
       </div>
   </div>
   </header>
+  <section id="intro">
+    <div class="container">
+      The Prime Minister's seat is not as comfortable as he'd like. And some people in Uxbridge are feeling indecisive. To help them make up their minds and choose a trustworthy MP, we've taken a closer look to see whether Boris' claims are bona fide or just BS.
+    </div>
+  </section>
   <section id="runway" class="scroll-animations">
       <div class="container scroll-animations">
         <div class="row align-items-center">
           <div class="col-lg-6 animated left">
-          <h2>Third Runway at Heathrow</h2>
+          <h2>On Heathrow expansion</h2>
           <h3>Claim:</h3>
           <blockquote>“I will lie down with you in front of those bulldozers and stop the building, stop the construction of that third runway.”</blockquote>
           <h3>Reality:</h3>    
-          <p>Despite his past claims to passionately reject the third runway at Heathrow, Mr Johnson abstained on a key vote on Heathrow expansion this year and has had little to say about it since. </p>
-          
+          <p>Despite his past claims to passionately reject the third runway at Heathrow, Mr Johnson abstained on a key vote on Heathrow expansion this year and has had little to say about it since. </p>    
         </div>
-        <div class="col-lg-6 animated">
+        <div class="col-lg-6 animated right">
           <img src="aeroplane.jpg" width="100%" />
         </div>
-        <a href="#nhs" class="button page-scroll">There's more...</a></div>
+        <div class="col-lg-12 nav">
+          <a href="#nhs" class="button page-scroll">There's more...</a>
+        </div>
+      </div>
     </div>
   </section>
   <section id="nhs" class="scroll-animations">
-      <div class="container">
-        <div class="row align-items-center scroll-animations">
-          <h2 class="col animated left">Stuff about nhs</h2>
-          <a href="#funding" class="button page-scroll">...and more...</a>
+    <div class="container scroll-animations">
+      <div class="row align-items-center">
+        <div class="col-lg-6 animated left">
+          <h2>On building hospitals</h2>
+          <h3>Claim:</h3>
+          <blockquote>“We are building 40 new hospitals.”</blockquote>
+          <h3>Reality:</h3>    
+          <p>Mr Johnson has claimed that his party would build 40 new hospitals, but this figure is spurious at best. The number seems to be based on the Conservatives being in power for the next 10 years (so two future election wins), and includes renovations of existing hospitals.</p>
         </div>
+        <div class="col-lg-6 animated right">
+          <img src="" width="100%" />
+        </div>
+        <a href="#brexitdeal" class="button page-scroll">...and more...</a>
+      </div>
     </div>
   </section>
-  <section id="funding" class="">
-      <div class="container">
-        <div class="row align-items-center scroll-animations">
-          <h2 class="col animated left">Stuff about funding</h2>
-          <a href="#support" class="button page-scroll">...and more...</a>
+  <section id="brexitdeal" class="">
+    <div class="container scroll-animations">
+      <div class="row align-items-center">
+        <div class="col-lg-6 animated left">
+          <h2>On his Brexit deal</h2>
+          <h3>Claim:</h3>
+          <blockquote>“Parliament voted to approve my Brexit deal, then voted for delay.”</blockquote>
+          <h3>Reality:</h3>    
+          <p>Parliament has never approved Mr Johnson’s Brexit deal. It only backed a second reading of the Withdrawal Agreement Bill. This often happens to secure a debate, with MPs then voting against a bill at a later point if it isn't amended to be acceptable. Many MPs have said they would have done just that in this case.</p>
         </div>
+        <div class="col-lg-6 animated right">
+          <img src="" width="100%" />
+        </div>
+        <a href="#delay" class="button page-scroll">...and more...</a>
+      </div>
     </div>
   </section>
-  <section id="support" class="">
-      <div class="container">
-        <div class="row align-items-center scroll-animations">
-          <h2 class="col animated left">Stuff about lies</h2>
-        </div>
+  <section id="delay" class="">
+    <div class="container scroll-animations">
+      <div class="row align-items-center">
+        <div class="col-lg-6 animated left">
+        <h2>On the cost of delaying Brexit</h2>
+        <h3>Claim:</h3>
+        <blockquote>"With every month of pointless delay – insisted on by Corbyn – it's costing this country an extra billion pounds."</blockquote>
+        <h3>Reality:</h3>    
+        <p>According to fact checking website Full Fact, the conveniently round figure of a billion pounds per month is only compared to a no-deal Brexit, in which the UK pays no ‘divorce bill’. It’s also misleading as it doesn’t include money that the UK gets back from the EU. The reality is that if, as he says, Mr Johnson gets a deal, it will most likely involve continued payments, particularly through the transition period.</p>
+      </div>
+      <div class="col-lg-6 animated right">
+        <img src="" width="100%" />
+      </div>
+      <a href="#tax" class="button page-scroll">...and more...</a></div>
     </div>
   </section>
-  <footer class="">
+  <section id="tax" class="">
+      <div class="container scroll-animations">
+        <div class="row align-items-center">
+          <div class="col-lg-6 animated left">
+          <h2>On Labour's corporation tax plans</h2>
+          <h3>Claim:</h3>
+          <blockquote>"We have already cut it from 28 to 19%, the lowest of any major economy. The alternative is Corbyn – who would whack it straight back up to the highest levels in Europe."</blockquote>
+          <h3>Reality:</h3>    
+          <p>Labour's plan is to raise corporation tax to 26%. That is still lower than France (32%), Portugal (32%), Germany (30%), Belgium (30%), Greece (28%) and Italy (28%).</p>
+        </div>
+        <div class="col-lg-6 animated right">
+          <img src="" width="100%" />
+        </div>
+        <a href="#footer" class="button page-scroll">Share</a></div>
+      </div>
+    </section>
+    <section id="share">
+      <div class="container">Do you have any more boris 'facts' that you think are just plain BS? Share them on twitter using <span>#WhatALoadOfBoris</span></div>
+    </section>
+  <footer id="footer" class="">
     <div class="container">
       <div>Share this now</div>
       <div>
-
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-telegram"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-whatsapp"></a>
+        <a href="#" class="fa fa-facebook"></a> 
+        <a href="#" class="fa fa-twitter"></a> 
+        <a href="#" class="fa fa-whatsapp"></a>
       </div>
     </div>
   </footer>
